@@ -198,7 +198,7 @@ $seleccionaIdioma = ($lang == 'English') ? 'Select Language' : 'Seleccione Idiom
         }
     </script>
     <div>
-        <a class="btn btn-secondary" href="" target="_blank" rel="noopener">
+        <a class="btn btn-secondary" href="https://github.com/Macedux/Examen2evaluacionFlotaColonial.git" target="_blank" rel="noopener">
             Página GitHub del proyecto
         </a>
     </div>
