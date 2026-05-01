@@ -49,17 +49,21 @@ switch ($accion) {
             header('Location: index.php?accion=login');                                //un señor astuto podia enviar el marcar mediante GET en la URL!
             exit;
         }
-        $naveController->marcarCylon();
+        $naveController->marcarCylon();// no se puede aplicar fall throught ya que necesita comparar dos cosas y esto solo funciona si comprueba una cosa (sesion activa)
         break;
     case 'crear':
 
     case 'editar':
 
+    case 'atacar':
+
     case 'eliminar':
+        
         if (!isset($_SESSION['usuario_id'])) {
             header('Location: index.php?accion=login');
             exit;
         }
+
         // Si está autenticado, dejamos que ejecute la acción
         if ($accion === 'crear')
             $naveController->crear();
@@ -67,17 +71,13 @@ switch ($accion) {
             $naveController->editar();
         if ($accion === 'eliminar')
             $naveController->eliminar();
+        if ($accion === 'atacar')
+            $naveController->atacar();
         break;
     case 'idioma':
-        $usuarioController->idioma();
+        $usuarioController->idioma();//El idioma esta fuera del comprobador de login, ¡todo el mundo tiene derecho a cambiar a ponerselo en su idioma!
         break;
-    case 'atacar':
-        if (!isset($_SESSION['usuario_id'])) { //ESTO HACE QUE ESTE PROTEGIDO FRENTE A QUE UN USUARIO LE DE POR GET EL VALOR ( y puentee el usuario_id)
-            header('Location: index.php?accion=login');
-            exit;
-        }
-        $naveController->atacar();
-        break;
+
 
     default:
         $naveController->index();
