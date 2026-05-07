@@ -2,8 +2,8 @@
 require_once "autoload.php";
 session_start();
 
-$gestor = new GestorPDO();
-$naveController = new NaveController($gestor);
+$gestor = new GestorPDO();//se llama inyección de dependencias — las dependencias se crean fuera y se inyectan dentro. Hace el código más organizado y fácil de mantener.
+$naveController = new NaveController($gestor);//singleton garantiza una sola conexion  que comparten los dos controllers
 $usuarioController = new UsuarioController($gestor);
 $accion = $_GET['accion'] ?? 'index';
 

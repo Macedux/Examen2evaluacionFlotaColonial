@@ -80,12 +80,12 @@ class UsuarioController
     }
 
     public function idioma()
-    {       
-
-        $_SESSION['idioma'] = $_POST['idioma'];
-    header("Location: index.php");
-    exit;
-
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $_SESSION['idioma'] = $_POST['idioma'];
+        }
+        header("Location: index.php");
+        exit;
     }
     public function logout()
     {

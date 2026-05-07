@@ -56,7 +56,7 @@ class Usuario
     {
         $this->username = $username;
     }
-    public function setpassword($password)
+    public function setPassword($password)
     {
         $this->password = $password;
     }

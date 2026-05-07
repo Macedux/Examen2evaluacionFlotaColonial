@@ -28,15 +28,6 @@ body::before {
 }
 
 /* =========================
-   LAYOUT
-========================= */
-.container {
-    width: 95%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
-
-/* =========================
    TITULOS
 ========================= */
 h1 {
@@ -44,11 +35,9 @@ h1 {
     text-align: center;
     letter-spacing: 4px;
     text-transform: uppercase;
-
     background: linear-gradient(180deg, #ffffff, #888);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     text-shadow: 0 0 10px rgba(255, 50, 50, 0.4);
     margin-bottom: 30px;
 }
@@ -70,18 +59,6 @@ h3 {
 }
 
 /* =========================
-   CARD / PANEL
-========================= */
-.card {
-    background: rgba(20, 25, 40, 0.9);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.8);
-}
-
-/* =========================
    BOTONES
 ========================= */
 .btn {
@@ -96,7 +73,6 @@ h3 {
     transition: all 0.2s ease;
 }
 
-/* principal */
 .btn-primary {
     background: linear-gradient(145deg, #ff3b3b, #7a0000);
     color: white;
@@ -108,7 +84,6 @@ h3 {
     transform: translateY(-1px);
 }
 
-/* secundario */
 .btn-secondary {
     background: linear-gradient(145deg, #1f2a44, #0f1626);
     color: #ccc;
@@ -120,7 +95,6 @@ h3 {
     color: #fff;
 }
 
-/* peligro */
 .btn-danger {
     background: linear-gradient(145deg, #ff0000, #5a0000);
     color: white;
@@ -131,7 +105,6 @@ h3 {
     box-shadow: 0 0 15px red;
 }
 
-/* cylon */
 .btn-cylon {
     background: black;
     color: #ff3b3b;
@@ -147,7 +120,7 @@ h3 {
     height: 2px;
     width: 100%;
     background: red;
-    animation: cylonScan 1.5s infinite;
+    animation: pulseRed 1.5s infinite;
 }
 
 /* =========================
@@ -201,12 +174,6 @@ tr:hover {
 /* =========================
    ALERTA CYLON
 ========================= */
-.cylon {
-    color: #ff3b3b;
-    font-weight: bold;
-    animation: pulseRed 1.2s infinite;
-}
-
 tr.cylon-row {
     animation: pulseRow 1.5s infinite;
 }
@@ -221,53 +188,4 @@ tr.cylon-row {
     0% { background: rgba(255,0,0,0.05); }
     50% { background: rgba(255,0,0,0.2); }
     100% { background: rgba(255,0,0,0.05); }
-}
-
-/* =========================
-   ESTADOS
-========================= */
-.estado-activa { color: #3bff88; }
-.estado-dañada { color: orange; }
-.estado-destruida { color: red; }
-
-/* =========================
-   BARRA CASCO
-========================= */
-.barra-casco {
-    height: 8px;
-    background: #222;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.casco-fill {
-    height: 100%;
-}
-
-.casco-alto { background: #3bff88; }
-.casco-medio { background: orange; }
-.casco-bajo { background: red; }
-
-/* =========================
-   LOGIN
-========================= */
-.login-box {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 30px;
-    background: rgba(20,25,40,0.95);
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.9);
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-    margin-top: 40px;
-    padding: 15px;
-    text-align: center;
-    font-size: 12px;
-    color: #9aa4b2;
-    border-top: 1px solid rgba(255,255,255,0.05);
 }

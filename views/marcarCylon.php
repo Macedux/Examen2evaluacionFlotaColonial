@@ -13,7 +13,7 @@
         Nave sospechosa:<br>
         <input type="checkbox" name="cylon_sospechoso" value="1"<?= $nave->getCylonSospechoso() ? 'checked' : '' ?> >
         
-        <button type="submit"class="btn btn-cylon" class="btn btn-secondary">Marcar</button>
+        <button type="submit" class="btn btn-cylon">Marcar</button>
         <?php if (isset($error)): ?>
             <p style="color: red;"><b>Error:</b> <?= $error ?></p>
         <?php endif; ?>

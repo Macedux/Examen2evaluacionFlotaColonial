@@ -32,7 +32,7 @@ class NaveCarguera extends Nave
         $this->capacidadDeCarga = $capacidadDeCarga;
     }
     
-public function recibirAtaque($impactos)
+public function recibirAtaque($impactos)//Principio open/closed (en principio hace lo mismo que Nave, pero si quiero puedo modificarlo para aumentar el daño)
 {
     $this->puntosDeCasco = $this->puntosDeCasco - ($impactos * 1);
     if ($this->puntosDeCasco < 0) $this->puntosDeCasco = 0;

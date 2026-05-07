@@ -3,13 +3,13 @@ USE colonial_fleet;
 CREATE TABLE naves (
     id INT AUTO_INCREMENT PRIMARY KEY, --
     nombre VARCHAR(100), --
-    tipo ENUM ('Batalla', 'Carguera','Cientifíca') NOT NULL, --
+    tipo ENUM ('Batalla', 'Carguera','Cientifica') NOT NULL, --Single Table Inheritance. Una sola tabla naves con todas las columnas de todos los tipos. La columna tipo es la clave
     estado ENUM ('Activa', 'Dañada','Destruida') NOT NULL, --
     velocidadFTL BOOLEAN,
     capacidadPasajeros INT, --
     armamento VARCHAR(100), --
     puntosCasco INT DEFAULT(100), --
-    clasificacion ENUM ('Battlestar', 'Escolta','Destructor'), --
+    clasificacion ENUM ('Battlestar', 'Escolta','Destructor'), --El precio a pagar es que hay columnas que quedan a NULL según el tipo. 
     tipoCarga ENUM ('Armamento', 'Ciudadanos','Secreto'), --
     capacidadCarga INT NULL, --
     numLaboratorios INT NULL, --

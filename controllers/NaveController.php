@@ -77,8 +77,8 @@ class NaveController
                 $nave = new NaveCientifica($id, $nombre, $estado, $velocidadFtL, $capacidadPasajeros, $puntosDeCasco, $cylonSospechoso, $_POST['numeroLaboratorios'], $_POST['especialidad']);
             }
 
-            $this->gestor->actualizar($nave);
-            header("Location: index.php");
+            $this->gestor->actualizar($nave);//Con el redirect después del POST, la última petición que el navegador recuerda es el GET del listado, no el POST. 
+            header("Location: index.php");//header y echo son excluyentes!
             exit;
         }
 
@@ -98,16 +98,19 @@ class NaveController
         include "views/marcarCylon.php";
 
     }
-    public function atacar()
-    {
-        $id = $_GET['id'] ?? null;
-        $nave = $this->gestor->buscar($id);
-        $nuevosCascos = $nave->recibirAtaque(10);
-        $this->gestor->actualizarCasco($id, $nuevosCascos, $nave->getEstado());//aqui se actualiza el estado a la par que el daño
+public function atacar()
+{
+    $id = $_GET['id'] ?? null;
+    $nave = $this->gestor->buscar($id);
+    if (!$nave) {
         header("Location: index.php");
         exit;
     }
-
+    $nuevosCascos = $nave->recibirAtaque(10);
+    $this->gestor->actualizarCasco($id, $nuevosCascos, $nave->getEstado());
+    header("Location: index.php");
+    exit;
+}
 
     public function eliminar()
     {

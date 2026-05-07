@@ -1,6 +1,6 @@
 <?php
 abstract class Nave // abstract hace que no pueda haber una nave a secas  (CLASE CONCEPTUAL) y permite declarar metodos sin cuerpo que las hijas estan oblicadas a declarar. Buena practica OOP
-{
+{                    //La palabra abstract en PHP es una protección técnica — le dice al lenguaje "esta clase nunca puede instanciarse directamente"   
     protected $id;
 
     protected $nombre;
