@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db
--- Tiempo de generación: 07-05-2026 a las 19:58:44
+-- Tiempo de generación: 07-05-2026 a las 20:05:47
 -- Versión del servidor: 9.5.0
 -- Versión de PHP: 8.3.28
 
@@ -77,8 +77,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `username`, `password`, `idioma`, `rol`, `colorFondo`) VALUES
 (1, 'Martinez', '$2y$10$YkGKrrpRmjKNGdo3c6rmSutOt.x.1xk4mnH7lSgAPVpiJTBhKfhFC', NULL, 'usuario', NULL),
-(2, 'almirante', '$2y$10$FmwrC9Jzwp.ZAXRvGzYJIeqFgAfLSTEiUrWUuf/CrjccHP3mOGsBa', NULL, 'admin', NULL),
-(3, 'Debs', '$2y$10$TYrPB.ODKqGOiGWB4U/VoesoSAAq75U7xVePuJBlq61O99t/U2xdC', NULL, 'usuario', NULL);
+(5, 'Almirante', '$2y$10$k17ZrTkHeI9iegoAScGyluoP3LRMUCNhQakH2obXqEYY6NftxNX2u', NULL, 'admin', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -111,7 +110,7 @@ ALTER TABLE `naves`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
