@@ -24,7 +24,6 @@ EXAMEN/
 ├── conf.json               # Configuración de la base de datos
 ├── query.sql               # Script DDL (creación de tablas)
 ├── style.css               # Hoja de estilos global
-├── hash.php                # Utilidad auxiliar para generar hashes
 │
 ├── models/
 │   ├── Connection.php      # Singleton PDO
@@ -47,6 +46,26 @@ EXAMEN/
     ├── login.php           # Formulario de inicio de sesión
     └── alta.php            # Formulario de registro de usuario
 ```
+
+---
+
+## Credenciales de acceso
+
+### Administrador
+| Campo | Valor |
+|---|---|
+| Usuario | `almirante` |
+| Contraseña | `123456` |
+| Rol | `admin` |
+
+> El administrador tiene acceso completo incluyendo marcar naves como sospechosas Cylon.
+
+### Usuario estándar (ejemplo)
+| Campo | Valor |
+|---|---|
+| Usuario | `Martinez` |
+| Contraseña | *(establecida al registrarse)* |
+| Rol | `usuario` |
 
 ---
 
@@ -136,19 +155,12 @@ git clone https://github.com/tu-usuario/colonial-fleet-registry.git
 }
 ```
 
-3. Importa el esquema de base de datos:
+3. Importa el esquema y datos de base de datos:
 ```bash
-mysql -u root -p < query.sql
+mysql -u root -p < colonial_fleet.sql
 ```
 
-4. Crea un usuario administrador manualmente en la base de datos:
-```sql
-INSERT INTO usuarios (username, password, rol) 
-VALUES ('admin', '$2y$...hash_bcrypt...', 'admin');
-```
-> Usa `hash.php` para generar el hash de la contraseña.
-
-5. Apunta el servidor web a la carpeta del proyecto y abre `index.php`.
+4. Apunta el servidor web a la carpeta del proyecto y abre `index.php`.
 
 ---
 
